@@ -38,7 +38,7 @@ const AboutMe = () => {
                 <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-2/3 mt-5 mb-5">
                     
                     <div className="text-lg text-blue-950">
-                        <h3 className="font-bold mb-2 mt-4">My Turning Point</h3>
+                        <h3 className="font-bold mb-2 mt-4">The Detour</h3>
                         <p>After being made redundant from my tech support role, I took a job as a fruit and vegetable delivery driver. While it was a change of pace, it taught me valuable skills in time management and problem-solving. This period was a detour in my career, but a useful one. Throughout, I stayed committed to coding, continuing to build my skills in my spare time.</p>
 
                         <h3 className="font-bold mb-2 mt-4">Family First</h3>
