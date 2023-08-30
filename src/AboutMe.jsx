@@ -1,38 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AboutMe = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const nextPage = () => {
+        setCurrentPage(2);
+    };
+
+    const prevPage = () => {
+        setCurrentPage(1);
+    };
+
     return (
-        <div id="about" className="min-h-screen bg-blue-100 flex items-center justify-center" style={{ backgroundImage: `url('background.png')` }}>
-            <div className="bg-white p-8 rounded-lg shadow-md w-2/3 mt-5 mb-5">
-                <div className="flex justify-between items-center">
-                    <img src='profile_pic.jpg' alt="John Driscoll" className="w-24 h-24 rounded-full mr-4" />
+        <div id="about" className="min-h-screen bg-blue-100 flex flex-col items-center justify-center" style={{ backgroundImage: `url('background.png')` }}>
+            {currentPage === 1 && (
+                
+                     <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-2/3 mt-5 mb-5 relative">
+                    <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-2/3 mt-5 mb-5 relative">
+                    <img src='profile_pic.jpg' alt="John Driscoll" className="w-24 h-24 rounded-full absolute top-0 right-0" />
+                    <h2 className="text-3xl font-semibold mb-4 text-blue-950">About Me</h2>
+                    </div>
+                    <div className="text-lg text-blue-950">
+                        <h3 className="font-bold mb-2">Who I Am</h3>
+                        <p>Hello, I'm John Driscoll. My path into the world of web development has been anything but traditional it was far removed from the coding world you might expect.</p>
+
+                        <h3 className="font-bold mb-2 mt-4">My Beginnings</h3>
+                        <p> I first cut my teeth in the dynamic environment of a bustling warehouse, where the order picking and inventory management became my day-to-day. There, I honed skills that aren't taught in coding bootcamps—teamwork, adaptability, and the art of thriving in a high-pressure setting</p>
+
+                        <h3 className="font-bold mb-2 mt-4">My Promotion</h3>
+                        <p>But as fate would have it, my knack for technology didn't go unnoticed. I soon found myself transitioning into a tech support role, where I was no longer dealing with physical packages but rather with a different kind of problem-solving. This was my first real taste of the tech world.</p>
+                    </div>
+                    <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={nextPage}>Next</button>
                 </div>
-                <h2 className="text-3xl font-semibold mb-4 text-blue-950">About Me</h2>
+            )}
 
-                <div className="text-lg text-blue-950">
-                    <h3 className="font-bold mb-2">Who I Am</h3>
-                    <p>Hello, I'm John Driscoll, and my journey into the world of web development is far from conventional.</p>
+            {currentPage === 2 && (
+                <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-2/3 mt-5 mb-5">
+                    
+                    <div className="text-lg text-blue-950">
+                        <h3 className="font-bold mb-2 mt-4">My Turning Point</h3>
+                        <p>After being made redundant from my tech support role, I took a job as a fruit and vegetable delivery driver. While it was a change of pace, it taught me valuable skills in time management and problem-solving. This period was a detour in my career, but a useful one. Throughout, I stayed committed to coding, continuing to build my skills in my spare time.</p>
 
-                    <h3 className="font-bold mb-2 mt-4">My Beginnings</h3>
-                    <p>It all began in a bustling warehouse, where I was just another guy sorting packages and managing inventory. But my curiosity for technology didn't let me stay there for long. I climbed the ladder and found myself in a tech support role, troubleshooting issues and providing solutions in a fast-paced environment.</p>
+                        <h3 className="font-bold mb-2 mt-4">Family First</h3>
+                        <p>During this time, I contracted COVID-19, and my mother also fell seriously ill. Family being a cornerstone in my life, I naturally stepped into the role of caregiver. Despite the challenges, I didn't put my web development studies on hold. Instead, I used this period as an opportunity to further deepen my skills in the field.</p>
 
-                    <h3 className="font-bold mb-2 mt-4">My Curveball</h3>
-                    <p>Life, as it often does, threw me a curveball. I transitioned into a completely different role as a fruit and vegetable delivery driver. While the job was different, my passion for technology never waned. I kept my dreams alive, tinkering with code during my free time and learning the basics of web development.</p>
+                        <h3 className="font-bold mb-2 mt-4">Where I Am Now</h3>
+                        <p>Today, fully fit and raring to go, I stand at an exciting crossroads. With a diverse skill set in hand, I'm eager to actively pursue roles that will allow me to fully utilize my expertise in web development.</p>
 
-
-                    <h3 className="font-bold mb-2 mt-4">My Turning  Point</h3>
-                    <p>Then came the pandemic. I contracted COVID-19 and had to take a break from work. It was a challenging period, but I turned adversity into opportunity. Confined to my home, I delved deeper into web development, learning languages like HTML, CSS, and JavaScript, and frameworks like React.js and Node.js.</p>
-
-                    <h3 className="font-bold mb-2 mt-4">Family First</h3>
-                    <p>In the midst of this, my mother fell ill. Family has always been my cornerstone, so I took on the role of a caregiver. It was a juggling act—balancing family responsibilities with my burgeoning interest in coding. But I persevered, and the experience enriched me both personally and professionally.</p>
-
-                    <h3 className="font-bold mb-2 mt-4">Where I Am Now</h3>
-                    <p>Today, I stand at an exciting crossroads. Armed with a diverse skill set and real-world experience, I am actively seeking opportunities to bring my web development expertise to the forefront. Whether it's a full-time role, part-time work, or freelance projects, I'm open to all avenues where I can contribute and continue to grow.</p>
-
-                    <h3 className="font-bold mb-2 mt-4">My Story</h3>
-                    <p>So, that's my story. It's been a rollercoaster of a journey, but every twist and turn has shaped me into who I am today. And I'm excited to see where the road ahead takes me</p>
+                    </div>
+                    <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={prevPage}>Previous</button>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
